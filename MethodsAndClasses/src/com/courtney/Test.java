@@ -1,18 +1,15 @@
 package com.courtney;
 
-// Objects are passed through their references.
-
+// Returning an object.
 class Test {
-    int a, b;
+    int a;
 
-    Test(int i, int j) {
+    Test(int i) {
         a = i;
-        b = j;
     }
 
-    // pass an object
-    void meth(Test o) {
-        o.a *=  2;
-        o.b /= 2;
+    Test incrByTen() {
+        Test temp = new Test(a+10);
+        return temp;
     }
 }
