@@ -1,17 +1,9 @@
 package com.courtney;
 
-// Objects may be passed to methods.
+// Simple Types are passed by value.
 class Test {
-    int a, b;
-
-    Test(int i, int j) {
-        a = i;
-        b = j;
-    }
-
-    // return true if o is equal to the invoking object
-    boolean equals(Test o) {
-        if(o.a == a && o.b == b) return true;
-        else return false;
+    void meth(int i, int j) {
+        i *= 2;
+        j /= 2;
     }
 }
