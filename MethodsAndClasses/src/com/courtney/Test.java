@@ -1,9 +1,18 @@
 package com.courtney;
 
-// Simple Types are passed by value.
+// Objects are passed through their references.
+
 class Test {
-    void meth(int i, int j) {
-        i *= 2;
-        j /= 2;
+    int a, b;
+
+    Test(int i, int j) {
+        a = i;
+        b = j;
+    }
+
+    // pass an object
+    void meth(Test o) {
+        o.a *=  2;
+        o.b /= 2;
     }
 }
