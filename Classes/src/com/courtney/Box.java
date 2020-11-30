@@ -1,21 +1,22 @@
 package com.courtney;
 
-// This program uses a parameterized method.
-
+/* Here, Box uses a parameterized constructor to
+   initialize the dimensions of a box.
+*/
 class Box {
     double width;
     double height;
     double depth;
 
-    // compute and return volume
-    double volume() {
-        return width * height * depth;
-    }
-
-    // sets dimensions of box
-    void setDim(double w, double h, double d) {
+    // This is the constructor for Box.
+    Box(double w, double h, double d) {
         width = w;
         height = h;
         depth = d;
+    }
+
+    // compute and return volume
+    double volume() {
+        return width * height * depth;
     }
 }
