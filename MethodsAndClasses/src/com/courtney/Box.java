@@ -1,12 +1,18 @@
 package com.courtney;
 
-/* Here, Box defines three constructors to initialize
-   the dimensions of a box various ways.
-*/
+// Here, Box allows one object to initialize another.
+
 class Box {
     double width;
     double height;
     double depth;
+
+    // construct clone of an object
+    Box(Box ob) { // pass object to constructor
+        width = ob.width;
+        height = ob.height;
+        depth = ob.depth;
+    }
 
     // constructor used when all dimensions specified
     Box(double w, double h, double d) {
