@@ -1,15 +1,18 @@
 package com.courtney;
 
-// Returning an object.
+/* This program demonstrates the difference between
+   public and private.
+*/
 class Test {
-    int a;
+    int a; // default access
+    public int b; // public access
+    private int c; // private access
 
-    Test(int i) {
-        a = i;
+    // methods to access c
+    void setc(int i) { // set c's value
+        c = i;
     }
-
-    Test incrByTen() {
-        Test temp = new Test(a+10);
-        return temp;
+    int getc() { // get c's value
+        return c;
     }
 }
