@@ -1,9 +1,7 @@
 package com.courtney;
 
-/* A program that uses the Box class.
+// This program declares two Box objects.
 
-   Call this file BoxDemo.java
-*/
 class Box {
     double width;
     double height;
