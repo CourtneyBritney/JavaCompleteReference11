@@ -1,6 +1,6 @@
 package com.courtney;
 
-// BoxWeight now fully implements all constructors.
+// Add weight.
 class BoxWeight extends Box {
     double weight; // weight of box
 

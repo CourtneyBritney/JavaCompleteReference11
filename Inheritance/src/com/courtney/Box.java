@@ -1,6 +1,8 @@
 package com.courtney;
 
-// A complete implementation of BoxWeight.
+// Extend BoxWeight to include shipping costs.
+
+// Start with Box.
 class Box {
     private double width;
     private double height;
