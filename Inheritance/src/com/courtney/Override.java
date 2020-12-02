@@ -1,9 +1,9 @@
 package com.courtney;
 
-class UseSuper {
+class Override {
     public static void main(String args[]) {
         B subOb = new B(1, 2, 3);
 
-        //subOb.show();
+        subOb.show(); // this calls show() in B
     }
 }

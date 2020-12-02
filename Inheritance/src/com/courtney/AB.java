@@ -1,30 +1,30 @@
 package com.courtney;
 
-// Demonstrate when constructors are called.
-
-// Create a super class.
+// Method overriding.
 class A {
-    A() {
-        System.out.println("Inside A's constructor.");
+    int i, j;
+
+    A(int a, int b) {
+        i = a;
+        j = b;
+    }
+
+    // display i and j
+    void show() {
+        System.out.println("i and j: " + i + " " + j);
     }
 }
 
-// Create a subclass by extending class A.
 class B extends A {
-    B() {
-        System.out.println("Inside B's constructor.");
-    }
-}
+    int k;
 
-// Create another subclass by extending B.
-class C extends B {
-    C() {
-        System.out.println("Inside C's constructor.");
+    B(int a, int b, int c) {
+        super(a, b);
+        k = c;
     }
-}
 
-class CallingCons {
-    public static void main(String args[]) {
-        C c = new C();
+    // display k -- this overrides show() in A
+    void show() {
+        System.out.println("k: " + k);
     }
 }
