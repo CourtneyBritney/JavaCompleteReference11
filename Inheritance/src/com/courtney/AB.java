@@ -8,21 +8,21 @@ package com.courtney;
 */
 
 // Create a superclass.
-class A {
-    int i; // public be default
-    private int j; // private to A
-
-    void setij(int x, int y) {
-        i = x;
-        j = y;
-    }
-}
-
-// A's j is not accessible here.
-class B extends A {
-    int total;
-
-    void sum() {
-        total = i + j; // ERROR, j is not accessible here
-    }
-}
+//class A {
+//    int i; // public be default
+//    private int j; // private to A
+//
+//    void setij(int x, int y) {
+//        i = x;
+//        j = y;
+//    }
+//}
+//
+//// A's j is not accessible here.
+//class B extends A {
+//    int total;
+//
+//    void sum() {
+       // total = i + j; // ERROR, j is not accessible here
+   // }
+//}
