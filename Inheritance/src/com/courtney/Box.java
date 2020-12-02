@@ -1,10 +1,10 @@
 package com.courtney;
 
-// This program uses inheritance to extend Box.
+// A complete implementation of BoxWeight.
 class Box {
-    double width;
-    double height;
-    double depth;
+    private double width;
+    private double height;
+    private double depth;
 
     // construct clone of an object
     Box(Box ob) { // pass object to constructor
