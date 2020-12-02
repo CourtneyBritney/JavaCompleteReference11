@@ -1,24 +1,28 @@
 package com.courtney;
 
-// A simple example of inheritance.
+/* In a class hierarchy, private members remain
+   private to their class.
+
+   This program contains an error and will not
+   compile.
+*/
 
 // Create a superclass.
 class A {
-    int i, j;
+    int i; // public be default
+    private int j; // private to A
 
-    void showij() {
-        System.out.println("i and j: " + i + " " + j);
+    void setij(int x, int y) {
+        i = x;
+        j = y;
     }
 }
 
-// Create a subclass by extending class A.
+// A's j is not accessible here.
 class B extends A {
-    int k;
+    int total;
 
-    void showk() {
-        System.out.println("k: " + k);
-    }
     void sum() {
-        System.out.println("i+j+k: " + (i+j+k));
+        total = i + j; // ERROR, j is not accessible here
     }
 }
