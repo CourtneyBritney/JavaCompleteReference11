@@ -1,28 +1,21 @@
 package com.courtney;
 
-/* In a class hierarchy, private members remain
-   private to their class.
+// Using super to overcome name hiding.
+class A {
+    int i;
+}
 
-   This program contains an error and will not
-   compile.
-*/
+// Create a subclass by extending class A.
+class B extends A {
+    int i; // this i hides the i in A
 
-// Create a superclass.
-//class A {
-//    int i; // public be default
-//    private int j; // private to A
-//
-//    void setij(int x, int y) {
-//        i = x;
-//        j = y;
-//    }
-//}
-//
-//// A's j is not accessible here.
-//class B extends A {
-//    int total;
-//
-//    void sum() {
-       // total = i + j; // ERROR, j is not accessible here
-   // }
-//}
+    B(int a, int b) {
+        super.i = a; // i in A
+        i = b; // i in B
+    }
+
+    void show() {
+        System.out.println("i in superclass: " + super.i);
+        System.out.println("i in subclass: " + i);
+    }
+}
