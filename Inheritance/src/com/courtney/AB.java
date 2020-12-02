@@ -1,30 +1,22 @@
 package com.courtney;
 
-// Method overriding.
+// Dynamic Method Dispatch
 class A {
-    int i, j;
-
-    A(int a, int b) {
-        i = a;
-        j = b;
-    }
-
-    // display i and j
-    void show() {
-        System.out.println("i and j: " + i + " " + j);
+    void callme() {
+        System.out.println("Inside A's callme method");
     }
 }
 
 class B extends A {
-    int k;
-
-    B(int a, int b, int c) {
-        super(a, b);
-        k = c;
+    // override callme()
+    void callme() {
+        System.out.println("Inside B's callme method");
     }
+}
 
-    // display k -- this overrides show() in A
-    void show() {
-        System.out.println("k: " + k);
+class C extends A {
+    // override callme()
+    void callme() {
+        System.out.println("Inside C's callme method");
     }
 }
