@@ -1,7 +1,7 @@
 package com.courtney;
 
-// Using run-time polymorphism.
-class Figure {
+// Using abstract methods and classes.
+abstract class Figure {
     double dim1;
     double dim2;
 
@@ -10,8 +10,6 @@ class Figure {
         dim2 = b;
     }
 
-    double area() {
-        System.out.println("Area for Figure is undefined.");
-        return 0;
-    }
+    // area is now an an abstract method
+    abstract double area();
 }

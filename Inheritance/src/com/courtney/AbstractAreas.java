@@ -1,25 +1,17 @@
 package com.courtney;
 
-class FindAreas {
+class AbstractAreas {
     public static void main(String args[]) {
-        Figure f = new Figure(10, 10) {
-            @java.lang.Override
-            double area() {
-                return 0;
-            }
-        };
+        // Figure f = new Figure(10, 10); // illegal now
         Rectangle r = new Rectangle(9, 5);
         Triangle t = new Triangle(10, 8);
 
-        Figure figref;
+        Figure figref; // this is OK, no object is created
 
         figref = r;
         System.out.println("Area is " + figref.area());
 
         figref = t;
-        System.out.println("Area is " + figref.area());
-
-        figref = f;
         System.out.println("Area is " + figref.area());
     }
 }

@@ -2,7 +2,12 @@ package com.courtney;
 
 class Dispatch {
     public static void main(String args[]) {
-        A a = new A(); // object of type A
+        A a = new A() {
+            @java.lang.Override
+            void callme() {
+
+            }
+        }; // object of type A
         B b = new B(); // object of type B
         C c = new C(); // object of type C
         A r; // obtain a reference of type A
