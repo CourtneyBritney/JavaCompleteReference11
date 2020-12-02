@@ -1,21 +1,30 @@
 package com.courtney;
 
-// Using super to overcome name hiding.
+// Demonstrate when constructors are called.
+
+// Create a super class.
 class A {
-    int i;
+    A() {
+        System.out.println("Inside A's constructor.");
+    }
 }
 
 // Create a subclass by extending class A.
 class B extends A {
-    int i; // this i hides the i in A
-
-    B(int a, int b) {
-        super.i = a; // i in A
-        i = b; // i in B
+    B() {
+        System.out.println("Inside B's constructor.");
     }
+}
 
-    void show() {
-        System.out.println("i in superclass: " + super.i);
-        System.out.println("i in subclass: " + i);
+// Create another subclass by extending B.
+class C extends B {
+    C() {
+        System.out.println("Inside C's constructor.");
+    }
+}
+
+class CallingCons {
+    public static void main(String args[]) {
+        C c = new C();
     }
 }
