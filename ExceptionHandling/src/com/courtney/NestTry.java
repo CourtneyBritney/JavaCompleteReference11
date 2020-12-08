@@ -22,10 +22,10 @@ class NestTry {
         /* If two command line args are used
            then generate an out-of-bounds exception. */
                 if(a==2) {
-                    int c[] = { 1 };
-                    c[42] = 99; // generate an out-of-bounds exception
+                    //c[42] = 99; // generate an out-of-bounds exception
                 }
             } catch(ArrayIndexOutOfBoundsException e) {
+                int c[] = { 1 };
                 System.out.println("Array index out-of-bounds: " + e);
             }
 
