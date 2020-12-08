@@ -1,12 +1,16 @@
 package com.courtney;
 
-// This program contains an error and will not compile.
+// This is now correct.
 class ThrowsDemo {
-    static void throwOne() {
+    static void throwOne() throws IllegalAccessException {
         System.out.println("Inside throwOne.");
-        //throw new IllegalAccessException("demo");
+        throw new IllegalAccessException("demo");
     }
     public static void main(String args[]) {
-        throwOne();
+        try {
+            throwOne();
+        } catch (IllegalAccessException e) {
+            System.out.println("Caught " + e);
+        }
     }
 }
