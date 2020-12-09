@@ -1,25 +1,27 @@
 package com.courtney;
 
-// Create a second thread by extending Thread
-class NewThread extends Thread {
+// Create multiple threads.
+class NewThread implements Runnable {
+    String name; // name of thread
+    Thread t;
 
-    NewThread() {
-        // Create a new, second thread
-        super("Demo Thread");
-        System.out.println("Child thread: " + this);
-        start(); // Start the thread
+    NewThread(String threadname) {
+        name = threadname;
+        t = new Thread(this, name);
+        System.out.println("New thread: " + t);
+        t.start(); // Start the thread
     }
 
-    // This is the entry point for the second thread.
+    // This is the entry point for thread.
     public void run() {
         try {
             for(int i = 5; i > 0; i--) {
-                System.out.println("Child Thread: " + i);
-                Thread.sleep(500);
+                System.out.println(name + ": " + i);
+                Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
-            System.out.println("Child interrupted.");
+            System.out.println(name + "Interrupted");
         }
-        System.out.println("Exiting child thread.");
+        System.out.println(name + " exiting.");
     }
 }

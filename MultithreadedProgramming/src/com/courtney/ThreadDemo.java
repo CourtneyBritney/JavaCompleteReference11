@@ -2,7 +2,7 @@ package com.courtney;
 
 class ThreadDemo {
     public static void main(String args[]) {
-        new NewThread(); // create a new thread
+        new NewThread("Gin"); // create a new thread
 
         try {
             for(int i = 5; i > 0; i--) {
