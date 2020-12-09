@@ -12,7 +12,10 @@ class Caller implements Runnable {
         t.start();
     }
 
+    // synchronize calls to call()
     public void run() {
-        target.call(msg);
+        synchronized(target) { // synchronized block
+            target.call(msg);
+        }
     }
 }
