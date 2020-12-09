@@ -1,15 +1,16 @@
 package com.courtney;
 
-// Using the suspend() and resume() methods for the
-// purposes of demonstration only. Not for new code.
+// Suspending and resuming a thread for Java 2
 class NewThread implements Runnable {
     String name; // name of thread
     Thread t;
+    boolean suspendFlag;
 
     NewThread(String threadname) {
         name = threadname;
         t = new Thread(this, name);
         System.out.println("New thread: " + t);
+        suspendFlag = false;
         t.start(); // Start the thread
     }
 
@@ -19,10 +20,24 @@ class NewThread implements Runnable {
             for(int i = 15; i > 0; i--) {
                 System.out.println(name + ": " + i);
                 Thread.sleep(200);
+                synchronized(this) {
+                    while(suspendFlag) {
+                        wait();
+                    }
+                }
             }
         } catch (InterruptedException e) {
             System.out.println(name + " interrupted.");
         }
         System.out.println(name + " exiting.");
+    }
+
+    synchronized void mysuspend() {
+        suspendFlag = true;
+    }
+
+    synchronized void myresume() {
+        suspendFlag = false;
+        notify();
     }
 }
