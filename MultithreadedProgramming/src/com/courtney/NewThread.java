@@ -1,6 +1,6 @@
 package com.courtney;
 
-// Create multiple threads.
+// Using join() to wait for threads to finish.
 class NewThread implements Runnable {
     String name; // name of thread
     Thread t;
@@ -20,7 +20,7 @@ class NewThread implements Runnable {
                 Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
-            System.out.println(name + "Interrupted");
+            System.out.println(name + " interrupted.");
         }
         System.out.println(name + " exiting.");
     }
