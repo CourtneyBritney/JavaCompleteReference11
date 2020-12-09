@@ -1,6 +1,7 @@
 package com.courtney;
 
-// Using join() to wait for threads to finish.
+// Using the suspend() and resume() methods for the
+// purposes of demonstration only. Not for new code.
 class NewThread implements Runnable {
     String name; // name of thread
     Thread t;
@@ -15,9 +16,9 @@ class NewThread implements Runnable {
     // This is the entry point for thread.
     public void run() {
         try {
-            for(int i = 5; i > 0; i--) {
+            for(int i = 15; i > 0; i--) {
                 System.out.println(name + ": " + i);
-                Thread.sleep(1000);
+                Thread.sleep(200);
             }
         } catch (InterruptedException e) {
             System.out.println(name + " interrupted.");
