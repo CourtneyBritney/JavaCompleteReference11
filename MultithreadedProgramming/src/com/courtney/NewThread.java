@@ -1,14 +1,13 @@
 package com.courtney;
 
-// Create a second thread.
-class NewThread implements Runnable {
-    Thread t;
+// Create a second thread by extending Thread
+class NewThread extends Thread {
 
     NewThread() {
         // Create a new, second thread
-        t = new Thread(this, "Demo Thread");
-        System.out.println("Child thread: " + t);
-        t.start(); // Start the thread
+        super("Demo Thread");
+        System.out.println("Child thread: " + this);
+        start(); // Start the thread
     }
 
     // This is the entry point for the second thread.
