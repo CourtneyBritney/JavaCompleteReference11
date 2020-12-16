@@ -1,8 +1,6 @@
 package com.courtney;
 
-// In this version of Stats, the type argument for
-// T must be either Number, or a class derived
-// from Number.
+// Use a wildcard.
 class Stats<T extends Number> {
     T[] nums; // array of Number or subclass
 
@@ -20,5 +18,14 @@ class Stats<T extends Number> {
             sum += nums[i].doubleValue();
 
         return sum / nums.length;
+    }
+
+    // Determine if two averages are the same.
+    // Notice the use of the wildcard.
+    boolean sameAvg(Stats<?> ob) {
+        if(average() == ob.average())
+            return true;
+
+        return false;
     }
 }
