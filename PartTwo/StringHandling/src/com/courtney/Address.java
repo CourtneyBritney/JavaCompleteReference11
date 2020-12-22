@@ -23,4 +23,4 @@ class Address {
         return name + "\n" + street + "\n" +
                 city + " " + state + " " + code;
     }
-} 
+}
