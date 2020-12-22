@@ -1,5 +1,7 @@
 package com.courtney;
 
+import java.util.LinkedList;
+
 class MailList {
     public static void main(String args[]) {
         LinkedList<Address> ml = new LinkedList<Address>();
